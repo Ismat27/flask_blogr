@@ -1,12 +1,8 @@
 from flask import Flask, jsonify
 import os
+from flaskr.__int__ import create_app
 
-app = Flask(__name__)
-
-
-@app.route('/')
-def index():
-    return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
+app = create_app()
 
 
 if __name__ == '__main__':
