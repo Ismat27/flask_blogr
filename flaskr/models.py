@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from sqlalchemy import Column, Text, String
+from sqlalchemy import Column, Text, String, Integer
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -13,6 +13,7 @@ def setup_db(app):
 class Variable(db.Model):
     __tablename__ = "variables"
 
+    id = Column(Integer, primary_key=True)
     name = Column(String(200), nullable=False)
     value = Column(Text, nullable=False)
 
